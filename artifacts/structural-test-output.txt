@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: root package pins the agreed pnpm major
+ok 1 - root package pins the agreed pnpm major
+  ---
+  duration_ms: 0.592521
+  type: 'test'
+  ...
+# Subtest: workspace contains apps and packages boundaries
+ok 2 - workspace contains apps and packages boundaries
+  ---
+  duration_ms: 0.155671
+  type: 'test'
+  ...
+# Subtest: design system exposes semantic color tokens
+ok 3 - design system exposes semantic color tokens
+  ---
+  duration_ms: 0.687371
+  type: 'test'
+  ...
+# Subtest: dark theme is implemented through semantic token overrides
+ok 4 - dark theme is implemented through semantic token overrides
+  ---
+  duration_ms: 0.170613
+  type: 'test'
+  ...
+# Subtest: reduced-motion users receive a safe motion fallback
+ok 5 - reduced-motion users receive a safe motion fallback
+  ---
+  duration_ms: 0.137995
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 44.687148

@@ -1,0 +1,25 @@
+{
+  "name": "bdt-booking",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BDT Booking - production-grade business booking platform.",
+  "packageManager": "pnpm@11.20.0",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=11 <12"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @bdt/booking-web dev",
+    "build": "pnpm --filter @bdt/booking-web build",
+    "start": "pnpm --filter @bdt/booking-web start",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
