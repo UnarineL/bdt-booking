@@ -30,7 +30,7 @@ export function Button(props: ButtonProps) {
   const { children, className, variant = "primary", asChild } = props;
   const mergedClassName = cn(styles, variants[variant], className);
 
-  if (props.asChild) {
+  if (asChild) {
     const child = Children.only(children);
 
     if (!isValidElement<{ className?: string }>(child)) {

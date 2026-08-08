@@ -1,28 +1,33 @@
 {
   "name": "@bdt/booking-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack --hostname 0.0.0.0",
     "build": "next build --webpack",
     "start": "next start --hostname 0.0.0.0",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:auth:migrate": "auth migrate --config src/lib/auth/auth.ts --yes",
+    "db:app:migrate": "node scripts/migrate-app-db.mjs",
+    "db:setup": "pnpm db:auth:migrate && pnpm db:app:migrate"
   },
   "dependencies": {
     "@bdt/ui": "workspace:*",
     "next": "16.2.12",
     "react": "19.2.7",
-    "react-dom": "19.2.7"
+    "react-dom": "19.2.7",
+    "better-auth": "1.6.25"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "eslint": "^9.39.5",
+    "eslint": "9.39.5",
     "eslint-config-next": "16.2.12",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.0"
+    "typescript": "^6.0.0",
+    "auth": "1.6.25"
   }
 }

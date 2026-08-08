@@ -5,9 +5,14 @@ import { ScheduleCard } from "@/features/dashboard/components/schedule-card";
 import { TrendCard } from "@/features/dashboard/components/trend-card";
 import { Button } from "@bdt/ui";
 
-export function DashboardPreview() {
+type DashboardPreviewProps = {
+  workspaceName: string;
+  userInitials: string;
+};
+
+export function DashboardPreview({ workspaceName, userInitials }: DashboardPreviewProps) {
   return (
-    <AppShell>
+    <AppShell workspaceName={workspaceName} userInitials={userInitials}>
       <section className="pb-24 lg:pb-6" aria-labelledby="dashboard-heading">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>

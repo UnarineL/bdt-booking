@@ -1,22 +1,21 @@
 # Changelog
 
-All notable changes to BDT Booking are documented here.
-
-## [0.1.0] - 2026-08-07
+## [0.2.0] - 2026-08-07
 
 ### Added
 
-- Milestone 001 production foundation.
-- pnpm workspace monorepo.
-- Next.js web application foundation.
-- Shared BDT UI primitives package.
-- Responsive dashboard shell preview.
-- Light and dark semantic theme tokens.
-- Error, loading, and not-found boundaries.
-- Root verification command.
-- GitHub Actions CI.
-- Architecture, testing, operational, and coding documentation.
+- Better Auth email/password identity and sessions.
+- Sign-up, sign-in, sign-out.
+- First-business onboarding.
+- Workspace and owner-membership persistence.
+- Protected workspace dashboard.
+- Workspace domain tests and architecture docs.
 
-### Known milestone constraint
+### Foundation corrections carried forward
 
-The archive intentionally does not contain a generated `pnpm-lock.yaml` because the artifact environment cannot access the package registry. The Founder should run `pnpm install` once in Termux and commit the resulting lockfile before the first production pull request.
+- Next.js 16.2.12.
+- ESLint 9.39.5.
+- Webpack path for Android/Termux.
+- pnpm lifecycle build governance.
+- sharp 0.35.3 override.
+- Button typing and theme-toggle fixes.
