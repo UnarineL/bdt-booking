@@ -5,6 +5,7 @@ packages:
 allowBuilds:
   sharp: true
   unrs-resolver: true
+  esbuild: true
 
 overrides:
   sharp: 0.35.3

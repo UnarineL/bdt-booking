@@ -1,40 +1,16 @@
-TAP version 13
-# Subtest: root package pins the agreed pnpm major
-ok 1 - root package pins the agreed pnpm major
-  ---
-  duration_ms: 0.592521
-  type: 'test'
-  ...
-# Subtest: workspace contains apps and packages boundaries
-ok 2 - workspace contains apps and packages boundaries
-  ---
-  duration_ms: 0.155671
-  type: 'test'
-  ...
-# Subtest: design system exposes semantic color tokens
-ok 3 - design system exposes semantic color tokens
-  ---
-  duration_ms: 0.687371
-  type: 'test'
-  ...
-# Subtest: dark theme is implemented through semantic token overrides
-ok 4 - dark theme is implemented through semantic token overrides
-  ---
-  duration_ms: 0.170613
-  type: 'test'
-  ...
-# Subtest: reduced-motion users receive a safe motion fallback
-ok 5 - reduced-motion users receive a safe motion fallback
-  ---
-  duration_ms: 0.137995
-  type: 'test'
-  ...
-1..5
-# tests 5
-# suites 0
-# pass 5
-# fail 0
-# cancelled 0
-# skipped 0
-# todo 0
-# duration_ms 44.687148
+✔ root package pins the agreed pnpm major (5.170677ms)
+✔ workspace contains apps and packages boundaries (0.682552ms)
+✔ design system exposes semantic color tokens (0.425886ms)
+✔ dark theme is implemented through semantic token overrides (0.407344ms)
+✔ reduced-motion users receive a safe motion fallback (0.449948ms)
+✔ dependency build scripts are explicitly governed (0.49802ms)
+✔ sharp is overridden to the patched 0.35 line (0.424219ms)
+✔ Termux web scripts use Webpack instead of Turbopack (0.762864ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 446.67224

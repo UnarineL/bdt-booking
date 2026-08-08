@@ -36,3 +36,21 @@ test("dark theme is implemented through semantic token overrides", () => {
 test("reduced-motion users receive a safe motion fallback", () => {
   assert.match(css, /prefers-reduced-motion/);
 });
+
+test("dependency build scripts are explicitly governed", () => {
+  assert.match(workspace, /allowBuilds:/);
+  assert.match(workspace, /sharp:\s*true/);
+  assert.match(workspace, /unrs-resolver:\s*true/);
+});
+
+test("sharp is overridden to the patched 0.35 line", () => {
+  assert.match(workspace, /sharp:\s*0\.35\.3/);
+});
+
+test("Termux web scripts use Webpack instead of Turbopack", () => {
+  const webPackage = JSON.parse(
+    readFileSync(new URL("../apps/web/package.json", import.meta.url), "utf8"),
+  );
+  assert.match(webPackage.scripts.dev, /--webpack/);
+  assert.match(webPackage.scripts.build, /--webpack/);
+});

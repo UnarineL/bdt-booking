@@ -66,3 +66,7 @@ Use comments to explain **why**, constraints, or non-obvious trade-offs. Do not 
 ## Definition of clean
 
 Code is considered clean when a competent engineer can understand its responsibility, dependencies, failure behavior, and extension points without reverse engineering the entire repository.
+
+## Persistence boundaries
+
+UI components must not issue SQL. Raw database access stays inside feature data layers or `lib/db`. Authentication tables are Better Auth implementation details; BDT authorization uses session identity plus BDT-owned memberships.

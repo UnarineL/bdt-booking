@@ -9,11 +9,6 @@ out/
 # build and coverage
 dist/
 build/
-r
-*.swp
-
-# TypeScript
-*.tsbuildinfo
 coverage/
 
 # local env
@@ -42,3 +37,8 @@ test-results/
 *.pem
 *.key
 *.p12
+
+*.swp
+*.tsbuildinfo
+apps/web/data/*.sqlite
+apps/web/data/*.sqlite-*

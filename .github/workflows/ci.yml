@@ -1,42 +1,44 @@
 name: CI
 
 on:
-  push:
-    branches: [main]
   pull_request:
-    branches: [main]
-
-permissions:
-  contents: read
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  push:
+    branches:
+      - main
 
 jobs:
   verify:
-    name: Verify
+    name: Verify repository
     runs-on: ubuntu-latest
-    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Use Node.js 24
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-
-      - name: Install pnpm
+      - name: Prepare pnpm
         run: corepack prepare pnpm@11.20.0 --activate
 
+      - name: Confirm toolchain
+        run: |
+          node --version
+          pnpm --version
+
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
+
+      - name: Prepare CI environment
+        run: |
+          echo "BETTER_AUTH_SECRET=$(openssl rand -hex 32)" >> "$GITHUB_ENV"
+          echo "BETTER_AUTH_URL=http://localhost:3000" >> "$GITHUB_ENV"
+          echo "SQLITE_DATABASE_PATH=$RUNNER_TEMP/bdt-booking-ci.sqlite" >> "$GITHUB_ENV"
 
       - name: Verify repository
         run: pnpm verify
